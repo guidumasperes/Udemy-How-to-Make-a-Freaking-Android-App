@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     Button workHistoryButton;
     Button callMeButton;
     Button emailMeButton;
+    Button schoolHistoryButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         workHistoryButton = (Button) findViewById(R.id.workHistoryButton);
         callMeButton = (Button) findViewById(R.id.callMeButton);
         emailMeButton = (Button) findViewById(R.id.emailMeButton);
+        schoolHistoryButton = (Button) findViewById(R.id.schoolHistoryButton);
 
         workHistoryButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +52,14 @@ public class MainActivity extends AppCompatActivity {
                  emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[] {"randomemail@gmail.com"});
                  emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Resume app");
                  startActivity(emailIntent);
+            }
+        });
+
+        schoolHistoryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent goToSchoolHistoryActivity = new Intent(getApplicationContext(), SchoolHistoryActivity.class);
+                startActivity(goToSchoolHistoryActivity);
             }
         });
     }
